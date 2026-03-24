@@ -1,4 +1,4 @@
-/* Definição de Cores e Estilos Base */
+
 :root {
     --primaria: #ff85a1;
     --secundaria: #a29bfe;
@@ -19,10 +19,10 @@ body {
     color: var(--texto);
     line-height: 1.6;
     scroll-behavior: smooth;
-    padding-top: 70px; /* Espaço para o menu fixo */
+    padding-top: 70px;
 }
 
-/* Menu de Navegação */
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -90,7 +90,7 @@ h2 {
     color: var(--primaria);
 }
 
-/* Grid de Portfólio */
+
 .grid-projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -105,7 +105,6 @@ h2 {
     border-top: 4px solid var(--primaria);
 }
 
-/* Formulário de Contato */
 #contactForm {
     max-width: 500px;
     margin: 0 auto;
@@ -136,7 +135,6 @@ input, textarea {
     font-weight: 600;
 }
 
-/* Modo Escuro (Para o JS) */
 body.dark-mode {
     background-color: #222;
     color: #fff;
