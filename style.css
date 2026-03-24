@@ -164,3 +164,27 @@ footer {
         padding: 40px 5%;
     }
 }
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+body.dark-mode nav {
+    background-color: #333;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+}
+
+body.dark-mode nav ul li a {
+    color: #fff;
+}
+
+body.dark-mode .bg-light {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode #contactForm {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
