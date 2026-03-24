@@ -1,19 +1,46 @@
-window.addEventListener("scroll", () => {
-  const cards = document.querySelectorAll(".card");
-  const triggerBottom = (window.innerHeight / 5) * 4;
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
 
-  cards.forEach((card) => {
-    const cardTop = card.getBoundingClientRect().top;
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    if (cardTop < triggerBottom) {
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+
+        if (nome === "" || email === "" || mensagem === "") {
+            alert("Por favor, preencha todos os campos obrigatórios.");
+            return;
+        }
+
+        // Validação de Formato de E-mail (RegEx)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Por favor, insira um e-mail válido.");
+            return;
+        }
+
+        enviarSucesso();
+    });
+
+    function enviarSucesso() {
+        alert("Mensagem enviada com sucesso! Entrarei em contato em breve.");
+
+        contactForm.reset();
     }
-  });
-});
 
-document.querySelectorAll(".card").forEach((card) => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(50px)";
-  card.style.transition = "all 0.6s ease-out";
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if(document.body.classList.contains('dark-mode')) {
+            document.body.style.backgroundColor = "#222";
+            document.body.style.color = "#fff";
+            themeBtn.textContent = "Modo Claro";
+        } else {
+            document.body.style.backgroundColor = "#fff";
+            document.body.style.color = "#333";
+            themeBtn.textContent = "Modo Escuro";
+        }
+    });
 });
