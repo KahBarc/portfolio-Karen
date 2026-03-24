@@ -1,46 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Portfólio - Home</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="favicon" href="/Assets/coelhinho-da-pascoa.png" />
+    <title>Karen - Portfólio Acadêmico</title>
+    <link rel="icon" href="./Assets/coelhinho-da-pascoa.png" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
     <nav>
-      <a href="index.html" class="logo">DevGirl</a>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="sobre.html">Sobre Mim</a></li>
-        <li><a href="formacao.html">Formação</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
+        <div class="logo">KarenDev</div>
+        <ul id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button id="theme-toggle">Alternar Tema</button>
     </nav>
 
-    <main>
-      <section class="hero">
-        <h1>Olá, eu sou a Karen</h1>
-        <p>
-          Seja bem-vinda ao meu portfólio online. Sou uma desenvolvedora
-          apaixonada por criar soluções digitais e este espaço é dedicado a
-          compartilhar minha trajetória e projetos.
-        </p>
-        <p>
-          Navegue pelo menu acima para conhecer mais sobre mim, minha formação e
-          como entrar em contato.
-        </p>
-      </section>
-    </main>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Olá, eu sou a <span class="highlight">Karen</span></h1>
+            <p>Estudante de Análise e Desenvolvimento de Sistemas na <strong>UNINTER</strong>.</p>
+        </div>
+    </section>
+
+    <section id="sobre" class="container">
+        <h2>Sobre Mim</h2>
+        <div class="content">
+            <p>Atualmente cursando Análise e Desenvolvimento de Sistemas, sou apaixonada por tecnologia e inovação. Meu objetivo é me tornar uma desenvolvedora Full Stack, focando na criação de interfaces modernas e funcionais. Além dos estudos, gosto de explorar novas ferramentas e resolver desafios lógicos.</p>
+        </div>
+    </section>
+
+    <section id="formacao" class="container bg-light">
+        <h2>Formação Acadêmica</h2>
+        <div class="content">
+            <ul>
+                <li><strong>Graduação:</strong> Análise e Desenvolvimento de Sistemas - UNINTER (Em andamento)</li>
+                <li><strong>Idiomas:</strong> Inglês (Nível Básico)</li>
+                <li><strong>Materia atual:</strong> Desenvolvimento Web, Lógica de Programação e Engenharia de Software.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>Meus Projetos</h2>
+        <div class="grid-projects">
+            <div class="card">
+                <h3>Será criado</h3>
+            </div>
+            <div class="card">
+                <h3>Portfólio Pessoal</h3>
+                <p>Site desenvolvido utilizando apenas HTML, CSS e JavaScript puro (Vanilla).</p>
+                <a href="#" class="project-link">Ver Código</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="container bg-light">
+        <h2>Contato</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@dominio.com" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+        </form>
+    </section>
 
     <footer>
-      <p>&copy; 2026 - Criado com ✨ e código puro.</p>
+        <p>&copy; 2026 - Karen - Atividade Extensionista UNINTER. Criado com ✨ e código.</p>
     </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
