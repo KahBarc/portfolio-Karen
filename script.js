@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Validação de Formato de E-mail (RegEx)
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             alert("Por favor, insira um e-mail válido.");
