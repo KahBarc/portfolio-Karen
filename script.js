@@ -1,36 +1,28 @@
-
+/* Comentário: Espera o HTML carregar completamente */
 document.addEventListener('DOMContentLoaded', () => {
-    const formulario = document.getElementById('contactForm');
+    
+    // 1. Alternar Tema (Claro/Escuro)
     const btnTema = document.getElementById('theme-toggle');
-
-    formulario.addEventListener('submit', (evento) => {
-        evento.preventDefault();
-
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const mensagem = document.getElementById('mensagem').value.trim();
-
-        if (nome === "" || email === "" || mensagem === "") {
-            alert("Erro: Por favor, preencha todos os campos antes de enviar.");
-            return; 
-        }
-
-        if (!email.includes("@") || !email.includes(".")) {
-            alert("Erro: Por favor, insira um e-mail válido.");
-            return;
-        }
-
-        alert("Mensagem enviada com sucesso, " + nome + "! Entrarei em contato em breve.");
-        formulario.reset(); // Limpa todos os campos
-    });
-
     btnTema.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
+    });
 
-        if (document.body.classList.contains('dark-mode')) {
-            btnTema.textContent = "Modo Claro";
+    // 2. Validação do Formulário de Contato
+    const formulario = document.getElementById('contactForm');
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault(); // Impede o recarregamento da página
+
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const mensagem = document.getElementById('mensagem').value;
+
+        // Verifica se os campos estão preenchidos
+        if (nome === "" || email === "" || mensagem === "") {
+            alert("Por favor, preencha todos os campos!");
         } else {
-            btnTema.textContent = "Modo Escuro";
+            // Simulação de envio sucesso
+            alert("Obrigada, " + nome + "! Sua mensagem foi enviada.");
+            formulario.reset(); // Limpa o formulário
         }
     });
 });
